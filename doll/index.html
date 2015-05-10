@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+<script src="jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="jquery.change-cursor-master/js/jquery.change-cursor.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+// Plugin changing cursor before element. Working with all browsers except IE<9
+//
+// Using:
+// $('.my-class').changeCursor('myurl/img.png, dx, dy, zIndex);
+//
+// dx, dy - coordinates of picture center. dx from left, dy from top.
+//
+// Designed by WebBrother.net
+
+(function ($) {
+    var browser = (function () {
+
+        var ua = navigator.userAgent,
+            tem,
+            M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+        if (/trident/i.test(M[1])) {
+            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE ' + (tem[1] || '');
+        }
+
+        if (M[1] === 'Chrome') {
+            tem = ua.match(/\bOPR\/(\d+)/);
+            if (tem !== null) return 'Opera ' + tem[1];
+        }
+
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) !== null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+    })();
+
+    $.fn.changeCursor = function (cursorPicUrl, dx, dy, zIndex) {
+
+        function inFunction(e) {
+            $cursor.show();
+            return false;
+        }
+
+        function outFunction(e) {
+            $cursor.hide();
+            return false;
+        }
+
+        function moveFunction(e) {
+            cursor.style.left = e.clientX - dx + 'px';
+            cursor.style.top = e.clientY - dy + 'px';
+        }
+
+        //defaults
+        dx = dx || 0;
+        dy = dy || 0;
+        zIndex = zIndex || 1000;
+
+        var IE      =   browser.indexOf('IE') != -1;
+        var version =   +browser.replace( /^\D+/g, '');
+        var $cursor =   $('#custom-cursor');
+        var cursor  =   $cursor[0];
+        var excluded=   'a, input';
+
+        if ( !( IE && version < 9 ) ) {
+            if ( $cursor.length === 0 ) {
+                $cursor = $('<svg id="custom-cursor"></svg>')// svg - hack for rendering performance
+                    .css({
+                    	width: '200px',
+                    	height: '249px',
+                        background: 'url("' + cursorPicUrl + '") no-repeat left top',
+                        position:   'fixed',
+                        display:    'block',
+                        'z-index':  zIndex,
+                        'pointer-events': 'none',
+                        transform: 'translateZ(0)'// hack to make this element rendering by GPU
+                    })
+                    .hide();
+                $('body').append( $cursor );
+                cursor = $cursor[0];
+            }
+
+            this.on( "mouseenter", inFunction )
+                .on( "mouseleave", outFunction )
+                .on( "mousemove",  moveFunction)
+                .css( 'cursor', 'none')
+                .css( 'cursor', 'none')
+                .find(excluded)
+                .on( "mouseenter", outFunction )
+                .on( "mouseleave", inFunction)
+        }
+
+        return this;
+    };
+
+})(jQuery);
+
+$(document).ready(function () {
+    var url = 'http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png';
+    $('#exhibit').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.dollbig').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.doll').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.sb').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.osb').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.openbook').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.textile').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.textilebook').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.vase').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.paint').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+    $('.painting').changeCursor('http://payload330.cargocollective.com/1/5/189109/8904708/hand2.png',20,0);
+});
+
+
+	$(document).ready(function() {
+     $('.doll').click(function() {
+          $('.dollbig').animate({
+               height: 'toggle'
+               }, 1
+          );
+     });
+});
+
+
+	$(document).ready(function() {
+     $('.book').click(function() {
+          $('.bookbig').animate({
+               height: 'toggle'
+               }, 1
+          );
+     });
+});
+
+
+
+
+</script>
+
+    <meta charset="utf-8">
+    <title>Touch Exhibit</title>
+    
+    
+    
+    <style type="text/css">
+    
+    body {
+    background: #e9e8e4;
+    }
+    
+    #exhibit {
+    
+     height: 100%;
+     width: 100%;
+     border: 0px solid blue;
+     background: #e9e8e4;
+     padding: 0px;
+}
+
+
+.doll {
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+padding-bottom: 10px;
+position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.dollbig {
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+padding-bottom: 10px;
+z-index: 995;
+position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+
+.osb {
+    position:fixed;
+    width: 200px;
+    height: 60px;
+    top: 30%;
+    left: 35%;
+    color: black;
+    font-family:'Italiana', san-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-style: italic;
+    font-weight: 800;
+    z-index:999;
+     opacity:0;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+   
+}
+
+
+
+.sb {
+position: fixed;
+width: 200px;
+height: 60px;
+left: 35%;
+top: 30%;
+z-index: 998;
+background: none;
+-webkit-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+
+}
+
+
+
+.sb:hover > .osb {
+    opacity:1;
+    left: 35%;
+    top: 30%;
+    width: 200px;
+    height: 60px;
+    display:block;
+    background:rgba(255, 255, 255)
+}
+
+
+
+
+    
+    </style>
+  </head>
+  <body>
+  
+    <div id="exhibit">
+    
+    <img class="doll" src="webdoll2.png" height="100%">
+    <img class="dollbig" style="display:none" src="webdoll1.png" height="100%">
+    <div class="sb"><div class="osb">small bump</div></div>
+     </div>
+         
+    
+
+  </body>
+</html>
