@@ -14,7 +14,14 @@
 
 
 
-
+$(document).ready(function() {
+     $('.info,.home').click(function() {
+          $('.home').animate({
+               height: 'toggle'
+               }, 60
+          );
+     });
+});
 
 
 
@@ -74,6 +81,7 @@ cursor: none;
 
 .home {
 
+display:none
 position: fixed;
 left: 50%;
 top: 50%;
@@ -82,22 +90,37 @@ padding:50px;
 z-index:999;
 background: rgba(242,71,52,0.3);
 color: white;
-width: 400px;
+width: 500px;
+font-weight: 500;
+font-family: "museo-sans-rounded",sans-serif;
+font-size: 55px;
+
+}
+
+.info {
+
+position: fixed;
+left: 20px;
+top: 20px;
+z-index:999;
+background: none;
+color: rgb(242,71,52);
+width: 500px;
 font-weight: 500;
 font-family: "museo-sans-rounded",sans-serif;
 font-size: 15px;
-
-}
 
 
     
     </style>
   </head>
   <body>
-<a href="http://touchexhibit.click"><div class="home">welcome to touchexhibit.click, an interactive experience. 
+<a href="http://touchexhibit.click"><div class="info">info</div></a>
+
+<div class="home">welcome to touchexhibit.click, an interactive experience. 
 <br>These items are brought to you directly from the RISD Museum. Usually placed behind glass, the public is normally unable to touch.
 <br>touchexhibit.click allows you to touch objects that are normally unable to be touched.
-  </div></a>
+  </div>
     <center>
     <table id="exhibit" width="1000" border="0">
 
