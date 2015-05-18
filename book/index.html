@@ -167,12 +167,8 @@ $(document).ready(function () {
       var url = 'handcursor2.png';
     $('#exhibit').changeCursor('handcursor2.png',20,0);
     $('.book').changeCursor('handcursor2.png',20,0);
-    $('.a').changeCursor('handcursor2.png',20,0);
-    $('.b').changeCursor('handcursor2.png',20,0);
-    $('.c').changeCursor('handcursor2.png',20,0);
-    $('.d').changeCursor('handcursor2.png',20,0);
-    $('.e').changeCursor('handcursor2.png',20,0);
-    $('.f').changeCursor('handcursor2.png',20,0);
+    $('.a,.b,.c,.d,.e,.f,.g,.h').changeCursor('handcursor2.png',20,0);
+    
     
 });
 
@@ -261,7 +257,7 @@ position: fixed;
 .a {
 position: fixed;
 width: 200px;
-height: 60px;
+height: 100px;
 top: 70%;
 left: 22%;
 z-index: 998;
@@ -273,7 +269,7 @@ background: none;
 .b {
 position: fixed;
 width: 200px;
-height: 60px;
+height: 100px;
 top: 25%;
 left: 50%;
 z-index: 998;
@@ -285,7 +281,7 @@ background: none;
 .c {
 position: fixed;
 width: 200px;
-height: 60px;
+height: 100px;
 top: 70%;
 left: 48%;
 z-index: 998;
@@ -297,7 +293,7 @@ background: none;
 .d {
 position: fixed;
 width: 200px;
-height: 60px;
+height: 100px;
 top: 20%;
 left: 18%;
 z-index: 998;
@@ -309,7 +305,7 @@ background: none;
 .e {
 position: fixed;
 width: 200px;
-height: 60px;
+height: 100px;
 top: 45%;
 left: 38%;
 z-index: 998;
@@ -321,8 +317,8 @@ background: none;
 .f {
 position: fixed;
 width: 200px;
-height: 60px;
-top: 18%;
+height: 100px;
+top: 15%;
 left: 28%;
 z-index: 998;
 background: none;
@@ -330,6 +326,29 @@ background: none;
 
 }
 
+.g {
+position: fixed;
+width: 200px;
+height: 100px;
+top: 16%;
+left: 48%;
+z-index: 998;
+background: none;
+
+
+}
+
+.h {
+position: fixed;
+width: 200px;
+height: 100px;
+top: 28%;
+left: 38%;
+z-index: 998;
+background: none;
+
+
+}
 
 
 
@@ -413,6 +432,14 @@ font-size: 15px;
     <p>tempted to scrape</p>
 </div>
 
+<div id="pop7" class="popbox">   
+    <p>hm</p>
+</div>
+
+<div id="pop8" class="popbox">   
+    <p>ah</p>
+</div>
+
 
  
  
@@ -421,7 +448,9 @@ font-size: 15px;
 <a href="#" class="c" data-popbox="pop3"></a>
 <a href="#" class="d" data-popbox="pop4"></a>
 <a href="#" class="e" data-popbox="pop5"></a>
-<a href="#" class="f" data-popbox="pop6"></a>         
+<a href="#" class="f" data-popbox="pop6"></a>   
+<a href="#" class="g" data-popbox="pop7"></a>
+<a href="#" class="h" data-popbox="pop8"></a>       
     
 
   </body>
