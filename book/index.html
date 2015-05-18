@@ -19,7 +19,7 @@
 $(function() {
     var moveLeft = 0;
     var moveDown = 0;
-    $('a.a,a.b,a.c,a.d,a.e,a.f').hover(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g,a.h,a.i,a.j').hover(function(e) {
    
         var target = '#' + ($(this).attr('data-popbox'));
          
@@ -31,7 +31,7 @@ $(function() {
         $(target).hide();
     });
  
-    $('a.a,a.b,a.c,a.d,a.e,a.f').mousemove(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g,a.h,a.i,a.j').mousemove(function(e) {
         var target = '#' + ($(this).attr('data-popbox'));
          
         leftD = e.pageX + parseInt(moveLeft);
@@ -167,7 +167,7 @@ $(document).ready(function () {
       var url = 'handcursor2.png';
     $('#exhibit').changeCursor('handcursor2.png',20,0);
     $('.book').changeCursor('handcursor2.png',20,0);
-    $('.a,.b,.c,.d,.e,.f,.g,.h').changeCursor('handcursor2.png',20,0);
+    $('.a,.b,.c,.d,.e,.f,.g,.h,.i,.j').changeCursor('handcursor2.png',20,0);
     
     
 });
@@ -258,8 +258,8 @@ position: fixed;
 position: fixed;
 width: 200px;
 height: 100px;
-top: 70%;
-left: 22%;
+top: 65%;
+left: 20%;
 z-index: 998;
 background: none;
 
@@ -306,8 +306,8 @@ background: none;
 position: fixed;
 width: 200px;
 height: 100px;
-top: 45%;
-left: 38%;
+top: 40%;
+left: 40%;
 z-index: 998;
 background: none;
 
@@ -318,8 +318,8 @@ background: none;
 position: fixed;
 width: 200px;
 height: 100px;
-top: 15%;
-left: 28%;
+top: 13%;
+left: 20%;
 z-index: 998;
 background: none;
 
@@ -330,7 +330,7 @@ background: none;
 position: fixed;
 width: 200px;
 height: 100px;
-top: 16%;
+top: 15%;
 left: 48%;
 z-index: 998;
 background: none;
@@ -343,7 +343,31 @@ position: fixed;
 width: 200px;
 height: 100px;
 top: 28%;
-left: 38%;
+left: 28%;
+z-index: 998;
+background: none;
+
+
+}
+
+.i {
+position: fixed;
+width: 200px;
+height: 100px;
+top: 10%;
+left: 45%;
+z-index: 998;
+background: none;
+
+
+}
+
+.j {
+position: fixed;
+width: 200px;
+height: 100px;
+top: 50%;
+left: 35%;
 z-index: 998;
 background: none;
 
@@ -358,7 +382,7 @@ background: none;
     display: none;
     position: absolute;
     z-index: 99999;
-    width: 150px;
+    width: 230px;
     padding-left: 0px;
     background: none;
     color: white;
@@ -413,7 +437,7 @@ font-size: 15px;
 
 <div id="pop2" class="popbox">
     
-    <p>fuzzy</p>
+    <p>fuzzy?</p>
 </div>
 
 <div id="pop3" class="popbox"> 
@@ -440,6 +464,14 @@ font-size: 15px;
     <p>ah</p>
 </div>
 
+<div id="pop9" class="popbox">   
+    <p>feels leathery</p>
+</div>
+
+<div id="pop10" class="popbox">   
+    <p>chipped paint, it's chipping off</p>
+</div>
+
 
  
  
@@ -450,7 +482,9 @@ font-size: 15px;
 <a href="#" class="e" data-popbox="pop5"></a>
 <a href="#" class="f" data-popbox="pop6"></a>   
 <a href="#" class="g" data-popbox="pop7"></a>
-<a href="#" class="h" data-popbox="pop8"></a>       
+<a href="#" class="h" data-popbox="pop8"></a>
+<a href="#" class="i" data-popbox="pop9"></a> 
+<a href="#" class="j" data-popbox="pop10"></a>            
     
 
   </body>
