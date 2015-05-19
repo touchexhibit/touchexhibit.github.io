@@ -16,7 +16,7 @@
 
 
 $(document).ready(function() {
-     $('.title').click(function() {
+     $('.title,.home1,.home2').click(function() {
           $('.home2').animate({
                height: 'toggle'
                }, 400
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
 
-$('.title').click(function(){
+$('.title,.home1,.home2').click(function(){
     if($('.home1').is(':visible')){
        $('.home1').fadeOut('fast');
     }
