@@ -16,12 +16,22 @@
 
 
 $(document).ready(function() {
-     $('.title,.home1,.home2').click(function() {
+     $('.title').click(function() {
           $('.home2').animate({
                height: 'toggle'
                }, 200
           );
           $(".home1").fadeIn(3000);
+          $('.home1,.home2').click(function() {
+          $('.home2').animate({
+               height: 'toggle'
+               }, 200
+          );
+          $('.home1,.home2').click(function() {
+          $('.home1').animate({
+               height: 'toggle'
+               }, 100
+          );
      });
 });
 
