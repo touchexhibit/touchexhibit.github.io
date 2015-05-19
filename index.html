@@ -21,14 +21,20 @@ $(document).ready(function() {
                height: 'toggle'
                }, 400
           );
-          $(".home1").fadeToggle(2500);
-     });
+          
+
+
+
+$('.title').click(function(){
+    if($('.home1').is(':visible')){
+       $('.home1').fadeOut('fast');
+    }
+    else{
+       $('.home1').fadeIn('slow');
+    }
 });
 
-
-
-
-
+});
 
 
 </script>
