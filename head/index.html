@@ -19,7 +19,7 @@
 $(function() {
     var moveLeft = 0;
     var moveDown = 0;
-    $('a.a,a.b,a.c,a.d,a.e,a.f').hover(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g').hover(function(e) {
    
         var target = '#' + ($(this).attr('data-popbox'));
          
@@ -31,7 +31,7 @@ $(function() {
         $(target).hide();
     });
  
-    $('a.a,a.b,a.c,a.d,a.e,a.f').mousemove(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g').mousemove(function(e) {
         var target = '#' + ($(this).attr('data-popbox'));
          
         leftD = e.pageX + parseInt(moveLeft);
@@ -173,6 +173,7 @@ $(document).ready(function () {
     $('.d').changeCursor('handcursor2.png',20,0);
     $('.e').changeCursor('handcursor2.png',20,0);
     $('.f').changeCursor('handcursor2.png',20,0);
+    $('.g').changeCursor('handcursor2.png',20,0);
 });
 
 
@@ -298,7 +299,7 @@ background: none;
 position: fixed;
 width: 200px;
 height: 100px;
-top: 48%;
+top: 45%;
 left: 45%;
 z-index: 998;
 background: none;
@@ -330,6 +331,18 @@ background: none;
 
 }
 
+.g {
+position: fixed;
+width: 200px;
+height: 100px;
+top: 37%;
+left: 38%;
+z-index: 998;
+background: none;
+
+
+}
+
 
 
 
@@ -339,7 +352,7 @@ background: none;
     display: none;
     position: absolute;
     z-index: 99999;
-    width: 150px;
+    width: 220px;
     padding-left: 0px;
     background: none;
     color: black;
@@ -394,23 +407,28 @@ font-size: 15px;
 
 <div id="pop2" class="popbox">
     
-    <p>ridges up and down</p>
+    <p>ridges up 
+<br>and down</p>
 </div>
 
 <div id="pop3" class="popbox"> 
-    <p>smooth</p>
+    <p>marble-y and strong</p>
 </div>
 
 <div id="pop4" class="popbox">   
-    <p>hills and bumps</p>
+    <p>there are tiny hills and bumps</p>
 </div>
 
 <div id="pop5" class="popbox">   
-    <p>dense</p>
+    <p>quite dense stone this is</p>
 </div>
 
 <div id="pop6" class="popbox">   
-    <p>rusty</p>
+    <p>rusty ah</p>
+</div>
+
+<div id="pop7" class="popbox">   
+    <p>ooh</p>
 </div>
 
 
@@ -422,7 +440,7 @@ font-size: 15px;
 <a href="#" class="d" data-popbox="pop4"></a>
 <a href="#" class="e" data-popbox="pop5"></a>
 <a href="#" class="f" data-popbox="pop6"></a>         
-    
+<a href="#" class="g" data-popbox="pop7"></a>    
 
   </body>
 </html>
