@@ -17,7 +17,7 @@
 
 $(document).ready(function() {
      $('.title,.home1,.home2').click(function() {
-          $('.home2').animate({
+          $('.home2,.home1').animate({
                height: 'toggle'
                }, 400
           );
@@ -26,23 +26,7 @@ $(document).ready(function() {
 
 
 
-$('.title,.home1,.home2').click(function(){
-    if($('.home1').is(':visible')){
-       $('.home1').fadeOut('fast');
-    }
-    else{
-       $('.home1').fadeIn(2500);
-    }
-});
 
-$('.title,.home1,.home2,.home3').click(function(){
-    if($('.home3').is(':visible')){
-       $('.home3').fadeOut('fast');
-    }
-    else{
-       $('.home3').fadeIn(4500);
-    }
-});
 
 });
 
