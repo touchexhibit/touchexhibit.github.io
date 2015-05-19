@@ -17,10 +17,11 @@
 
 $(document).ready(function() {
      $('.title,.home1,.home2').click(function() {
-          $('.home1,.home2').animate({
+          $('.home2').animate({
                height: 'toggle'
                }, 200
           );
+          $(".home1").fadeToggle(3000);
      });
 });
 
@@ -176,7 +177,7 @@ background: #F24734;
 
 position: fixed;
 left: 50%;
-top: 85px;
+top: 100px;
 -webkit-transform: translate(-50%, -50%);
 padding-left: 95px;
 padding-right: 95px;
