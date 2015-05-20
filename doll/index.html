@@ -19,7 +19,7 @@
 $(function() {
     var moveLeft = 0;
     var moveDown = 0;
-    $('a.a,a.b,a.c,a.d,a.e,a.f').hover(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g').hover(function(e) {
    
         var target = '#' + ($(this).attr('data-popbox'));
          
@@ -31,7 +31,7 @@ $(function() {
         $(target).hide();
     });
  
-    $('a.a,a.b,a.c,a.d,a.e,a.f').mousemove(function(e) {
+    $('a.a,a.b,a.c,a.d,a.e,a.f,a.g').mousemove(function(e) {
         var target = '#' + ($(this).attr('data-popbox'));
          
         leftD = e.pageX + parseInt(moveLeft);
@@ -71,14 +71,12 @@ $(function() {
 
 
 
-// Plugin changing cursor before element. Working with all browsers except IE<9
-//
-// Using:
+
+
 // $('.my-class').changeCursor('myurl/img.png, dx, dy, zIndex);
 //
 // dx, dy - coordinates of picture center. dx from left, dy from top.
-//
-// Designed by WebBrother.net
+
 
 (function ($) {
     var browser = (function () {
@@ -173,6 +171,7 @@ $(document).ready(function () {
     $('.d').changeCursor('handcursor2.png',20,0);
     $('.e').changeCursor('handcursor2.png',20,0);
     $('.f').changeCursor('handcursor2.png',20,0);
+    $('.g').changeCursor('handcursor2.png',20,0);
 });
 
 
@@ -330,6 +329,18 @@ background: none;
 
 }
 
+.f {
+position: fixed;
+width: 200px;
+height: 60px;
+top: 55%;
+left: 35%;
+z-index: 998;
+background: none;
+
+
+}
+
 
 
 
@@ -413,6 +424,10 @@ font-size: 15px;
     <p>indents</p>
 </div>
 
+<div id="pop7" class="popbox">   
+    <p>coarse... is this rock?</p>
+</div>
+
 
  
  
@@ -422,7 +437,7 @@ font-size: 15px;
 <a href="#" class="d" data-popbox="pop4"></a>
 <a href="#" class="e" data-popbox="pop5"></a>
 <a href="#" class="f" data-popbox="pop6"></a>         
-    
+<a href="#" class="g" data-popbox="pop7"></a>      
 
   </body>
 </html>
